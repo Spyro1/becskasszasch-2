@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}BecskasszaSCH{% endblock %}
+
+<!-- Szükséges paraméterek: items, use -->
+
+{% block content %}
+    {% if user %}
+{#        <h1>Üdvözlünk, {{ user.name }}!</h1>#}
+        <h1>Az egyenleged: <strong>{{ user.balance }} JMF</strong></h1>
+        <div class="row">
+            {% for item in items %}
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card">
+                    <img src="{{ item.icon_uri }}" class="card-img-top" alt="{{ item.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.name }}</h5>
+                        <p class="card-text">{{ item.price }} Ft</p>
+                        {% if item.isactive %}
+                            <button class="btn btn-primary">Elfogyasztás</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h1>Jelentkezz be AuthSCH fiókoddal!</h1>
+    {% endif %}
+{% endblock %}

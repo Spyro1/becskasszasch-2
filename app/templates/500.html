@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}Hiba - 500{% endblock %}
+{% block content %}
+<h1>500 - Szerverhiba</h1>
+<p>Valami elromlott. Kérjük, próbáld meg újra később.</p>
+<a href="{{ url_for('index') }}" class="btn btn-primary">Vissza a kezdőlapra</a>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}BecskasszaSCH | Tételek{% endblock %}
+
+<!-- Szükséges paraméterk: user, items -->
+
+{% block content %}
+<h1>Tételek kezelése</h1>
+
+<table class="table bg-transparent">
+    <thead>
+        <tr>
+            <th>Név</th>
+            <th>Ár</th>
+            <th>Elérhetőség</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.price }} Ft</td>
+            <td>{{ 'Igen' if item.isactive else 'Nem' }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+<form action="POST">
+    Neve:
+    <input type="text" name="name" id="name">
+    Ára:
+    <input type="number" name="price" id="price">
+    Ikon:
+    <input type="file" name="icon" id="icon" text="Feltöltés">
+</form>
+{% endblock %}

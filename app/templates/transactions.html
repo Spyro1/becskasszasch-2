@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}BecskasszaSCH | Költések{% endblock %}
+
+<!-- Szükséges paraméterek: user, transactions -->
+
+{% block content %}
+<h1>Költési előzmények</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Dátum</th>
+            <th>Tétel</th>
+            <th>Darabszám</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction.date }}</td>
+            <td>{{ transaction.item.name }}</td>
+            <td>{{ transaction.count }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

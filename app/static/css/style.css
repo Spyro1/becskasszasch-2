@@ -1,0 +1,70 @@
+:root{
+    --primary-color: #e63946;
+    --secondary-color: #a8dadc;
+    --dark-color: #1d3557;
+    --light-color: #f1faee;
+    --link-color: #457b9d;
+}
+
+*{
+    font-family: Bahnschrift, serif;
+}
+
+footer {
+    margin-top: auto;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+/* Light-mode */
+
+.light-mode {
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+.light-mode .navbar ,
+.light-mode .footer-message{
+    color: var(--light-color);
+    background-color: var(--dark-color);
+}
+
+/* Dark-mode */
+
+.dark-mode {
+    color:  var(--light-color);
+    background-color: var(--dark-color);
+}
+
+.dark-mode .navbar ,
+.dark-mode .footer-message{
+    color: white;
+    background-color: darkblue;
+}
+
+.nav-title {
+    color: white !important;
+    font-weight: bold;
+    font-size: 25px !important;
+}
+  
+
+
+/* Highlight with moving rainbow effect */
+
+@keyframes rainbow {
+    0% { color: red; }
+    14% { color: orange; }
+    28% { color: yellow; }
+    42% { color: green; }
+    56% { color: blue; }
+    70% { color: indigo; }
+    84% { color: violet; }
+    100% { color: red; }
+}
+
+.highlight {
+    text-shadow: 2px 2px 2px white;
+    animation: rainbow 5s linear infinite;
+}

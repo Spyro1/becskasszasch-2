@@ -1,0 +1,45 @@
+<!-- Idiglenes bejelentkeztetési form amíg nem lesz authSCH integrálva -->
+
+{% extends 'base.html' %}
+{% block title %}BecskasszaSCH | Belépés{% endblock %}
+
+<!-- Szükséges paraméterk: user -->
+
+{% block content %}
+<div class="card mb-3 w-50 mx-auto shadow">
+
+    <div class="card-body">
+
+      <div class="pt-4 pb-2">
+        <h5 class="card-title text-center pb-0 fs-4">Bejelentkezés</h5>
+        <p class="text-center small">Így lehet bejelentkezni, amíg AuthSCH nincs integrálva.</p>
+      </div>
+
+      <form method="POST" class="row g-3 needs-validation">
+
+        <div class="col-12">
+          <label for="yourUsername" class="form-label">Felhasználónév</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input type="text" name="username" class="form-control" id="yourUsername" required>
+            <div class="invalid-feedback">Írd be a felhasználóneved</div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="yourPassword" class="form-label">Jelszó</label>
+          <input type="password" name="password" class="form-control" id="yourPassword" required>
+          <div class="invalid-feedback">Írd be a jelszavad</div>
+        </div>
+
+        <div class="col-12">
+          <button class="btn btn-primary w-100" type="submit">Bejelentkezés</button>
+        </div>
+        <div class="col-12">
+            <p class="small mb-0">Még nincs felhasználód? <a href="/register" class="btn btn-outline-dark">Regisztrálj</a></p>
+        </div>
+      </form>
+
+    </div>
+</div>
+{% endblock %}
